@@ -1,0 +1,24 @@
+@import "./variables";
+
+body {
+    font-family: $baseFont, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $titleFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1170px;
+    margin: auto;
+  }
+  
+  img {
+    max-width: 100%;
+  }
