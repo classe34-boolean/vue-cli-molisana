@@ -22,11 +22,16 @@
               <h3>Prodotti</h3>
               <nav>
                   <ul>
-                      <li><a href="#">Le classiche</a></li>
+                      <li 
+                        v-for="(anchor, index) in anchors" 
+                        :key="index">
+                        <a :href="anchor.url">{{ anchor.text }}</a>
+                    </li>
+                      <!-- <li><a href="#">Le classiche</a></li>
                         <li><a href="#">Le Integrali</a></li>
                         <li><a href="#">Le Speciali</a></li>
                         <li><a href="#">Le Biologiche</a></li>
-                        <li><a href="#">Le Gluten-free</a></li>
+                        <li><a href="#">Le Gluten-free</a></li> -->
                   </ul>
               </nav>
           </div>
@@ -36,7 +41,17 @@
 
 <script>
 export default {
-    name: "Footer"
+    name: "Footer",
+    // Props, sintassi ad array
+    // props: ["anchors"]
+
+    // Props, sintassi ad oggetti
+    props: {
+        anchors: {
+            type: Array,
+            required: true
+        }
+    }
 }
 </script>
 
@@ -51,29 +66,36 @@ export default {
         @include full-backgroundsize(100% auto);
     }
     .cols {
-        display: flex;    
-    }
-    .cols > div {
-        width: calc(100% / 3);
-    }
+        
+        img {
+           width: 70%; 
+        }
 
-    .cols img {
-        width: 70%;
+        & > div {
+            float: left;
+            width: calc(100% / 3);
+        }
+
+        &::after {
+            @include clearfix;
+        }
     }
 
     ul {
         list-style: none;
-    }
 
-    li a {
-        display: block;
-        padding: 2px 0;
-        text-decoration: none;
-        color: $brandColor;
-    }
+        li {
+            a {
+                display: block;
+                padding: 2px 0;
+                text-decoration: none;
+                color: $brandColor;
 
-    li a:hover {
-        text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     h3 {

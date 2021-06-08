@@ -16,30 +16,31 @@
 <script>
 export default {
     name: "Header",
+    props: [ "links" ],
     data: function() {
         return {
-            links: [
-                {
-                    text: "Home",
-                    url: "#home",
-                    current: false
-                },
-                {
-                    text: "Prodotti",
-                    url: "#prodotti",
-                    current: false
-                },
-                {
-                    text: "Chi Siamo",
-                    url: "#chi-siamo",
-                    current: true
-                },
-                {
-                    text: "Contatti",
-                    url: "#contatti",
-                    current: false
-                }
-            ]
+            // links: [
+            //     {
+            //         text: "Home",
+            //         url: "#home",
+            //         current: false
+            //     },
+            //     {
+            //         text: "Prodotti",
+            //         url: "#prodotti",
+            //         current: false
+            //     },
+            //     {
+            //         text: "Chi Siamo",
+            //         url: "#chi-siamo",
+            //         current: true
+            //     },
+            //     {
+            //         text: "Contatti",
+            //         url: "#contatti",
+            //         current: false
+            //     }
+            // ]
         }
     }, 
     methods: {

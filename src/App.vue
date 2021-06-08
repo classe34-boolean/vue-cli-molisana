@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- testata della pagina -->
-    <Header />
+    <Header :links="menu" />
+
     <!-- /testata della pagina -->
 
     <!-- corpo della pagina -->
@@ -11,7 +12,7 @@
     <!-- /corpo della pagina -->
 
     <!-- chiusura della pagina -->
-    <Footer />
+    <Footer :anchors="menu" />
     <!-- /chiusura della pagina -->
   </div>
 </template>
@@ -27,6 +28,32 @@ export default {
     Header,
     Products,
     Footer
+  },
+  data: function() {
+    return {
+      menu: [
+                {
+                    text: "Home",
+                    url: "#home",
+                    current: false
+                },
+                {
+                    text: "Prodotti",
+                    url: "#prodotti",
+                    current: false
+                },
+                {
+                    text: "Chi Siamo",
+                    url: "#chi-siamo",
+                    current: true
+                },
+                {
+                    text: "Contatti",
+                    url: "#contatti",
+                    current: false
+                }
+            ]
+    }
   }
 }
 </script>
